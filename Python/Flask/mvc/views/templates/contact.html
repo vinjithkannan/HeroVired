@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>{{ title }}</h2>
+            <p>Our mission is to provide high-quality products and services to our customers while maintaining a commitment to sustainability and social responsibility.</p>
+        </section>
+        <section>           
+            <h2>Our Team</h2>
+            <p>We have a diverse team of professionals with expertise in various fields, including technology, marketing, and customer service. Our team is dedicated to ensuring that our customers have the best experience possible.</p>
+        </section>
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to learn more about our company, please              
+                <a href="{{ url_for('contact') }}">contact us</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Our Company. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

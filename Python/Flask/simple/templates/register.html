@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>{{title}}</h2>
+            <p>Our mission is to provide high-quality products and services to our customers while maintaining a commitment to sustainability and social responsibility.</p>
+        </section>
+        <section>           
+            <form action="{{ url_for('register') }}" method="post">
+                <label for="username">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Register"> <a href="{{ url_for('login') }}">Login</a>
+            </form>
+        </section>
+        <section>
+            <h2>Our Team</h2>
+            <ol>
+                {% for profile in profileList %}
+                <li>{{profile.name}} . {{ profile.username }}</li>
+                {% endfor %}
+            </ol>
+       </section>
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to learn more about our company, please              
+                <a href="{{ url_for('contact') }}">contact us</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Our Company. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
